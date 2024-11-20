@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY = {
-    'cloud_name': 'Асура',
+    'cloud_name': 'arina07kz@gmail.com',
     'api_key': '893175612648127',
     'api_secret': 'ik4hWVqZZfY9IUhjqnUmDCJspxQ',
 }

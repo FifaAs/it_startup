@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-_xd5thu06le^wci%b&(9m6wc@v8meq*b6v=nvxi2_0k2iq2h*w
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -43,13 +44,6 @@ INSTALLED_APPS = [
     'cloudinary_storage'
 ]
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-CLOUDINARY = {
-    'cloud_name': 'arina07kz@gmail.com',
-    'api_key': '893175612648127',
-    'api_secret': 'ik4hWVqZZfY9IUhjqnUmDCJspxQ',
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,5 +133,5 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'img/')
+MEDIA_URL = '/img/'

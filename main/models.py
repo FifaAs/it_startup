@@ -11,7 +11,7 @@ class Post(models.Model): #Создаем модель (своего рода с
     TextNews=models.TextField('Статья')
     Date = models.DateTimeField("Дата события")
     Date_Stop = models.DateTimeField("Закрытие регистрации", default=datetime.now)
-    ImgNews =  models.ImageField("Картинка Новости", blank = True, upload_to='main/image')
+    ImgNews =  models.ImageField("Картинка Новости", blank = True, upload_to='static/main/post')
     
     def __str__(self):
         return self.ClubName

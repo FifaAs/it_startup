@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime
+import shutil
+from django.conf import settings
+
 
 # Create your models here.
 
@@ -19,3 +22,11 @@ class Post(models.Model): #Создаем модель (своего рода с
     class Meta: #Создаем название таблицы в странице алминистратора для нашей модели
         verbose_name="Новость" #Единичсное число
         verbose_name_plural="Новости" #Множественное число
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сохраняем объект
+        if self.ImgNews:
+            # Перемещаем файл в STATIC_ROOT
+            source_path = self.ImgNews.path
+            destination_path = settings.STATIC_ROOT / 'uploaded_images' / self.ImgNews.name
+            shutil.copy(source_path, destination_path)
